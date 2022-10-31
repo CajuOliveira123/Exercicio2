@@ -9,7 +9,7 @@ int main()
     //tempo
     double t;
     //velocidade atingida
-    double va;
+    double v;
     //massa
     double m;
     //espaco percorrido
@@ -19,27 +19,24 @@ int main()
 
     printf("Informe a massa do aviao (ton): ");
     scanf("%lf", &m);
-    m = m * 1000;
 
     printf("Informe a acelaracao (m/s)2: ");
     scanf("%lf", &a);
-    a = sqrt(a);
-    //a = a * 3.6;
+    //a = sqrt(a);
 
     printf("Informe o tempo gasto na decolagem (s): ");
     scanf("%lf", &t);
 
-    va = a * t;
-    printf("Velocidade = %lf\n", va);
+    m = m * 1000;
+    v = a * t;
+    //s = v * t;
+    s = a * pow(t, 2) / 2;
+    w = m * pow(v, 2) / 2;
+    v = v * 3.6;
 
-    s = (a * t) * (a * t) / 2;
-    //s = pow(a * t, 2) / 2;
-    printf("Espaco percorrido = %lf\n", s);
-
-    w = (m * va) * (m * va) / 2;
-    printf("Trabalho realizado = %lf\n", w);
-
-
+    printf("Velocidade = %.2lf\n", v);
+    printf("Espaco percorrido = %.2lf\n", s);
+    printf("Trabalho realizado = %.2lf\n", w);
 
     return 0;
 }
